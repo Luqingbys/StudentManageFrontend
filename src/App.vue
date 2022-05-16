@@ -1,10 +1,14 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <n-dialog-provider>
+    <n-message-provider>
+      <router-view />
+    </n-message-provider>
+  </n-dialog-provider>
 </template>
+
+<script lang="ts" setup>
+import { NMessageProvider, NDialogProvider } from 'naive-ui'
+</script>
 
 <style lang="scss">
 #app {
@@ -26,5 +30,11 @@
       color: #42b983;
     }
   }
+}
+
+.system {
+  font-family: 华文新魏;
+  font-size: 36px;
+  font-weight: bolder;
 }
 </style>
